@@ -1,28 +1,45 @@
 <template>
   <div class="home">
-    <div class="m-4"></div>
-    <h1>Home</h1>
+    
+      <b-card
+        overlay
+        img-src="/img/bg/search.png"
+        img-alt="Card Image"
+        class="text-center"
 
-
-
-
-
-    <!-- <b-button @click="getImgs()">TEST many</b-button> -->
-
+        text-variant="white"
+        text-align="center"
+        text-vertical-align="cneter"
+        title=" "
+        sub-title=" "
+      >
+        <b-card-text >
+          <div class="text-center">
+            <b-form  @submit.prevent="searchImgs(search_text)" >
+                <b-form-input class="m-auto" id="search_input" v-model="search_text"  placeholder="Поиск" :state="validation" /> 
+                <!-- <b-button @click="searchImgs(search_text)" variant="success">Поиск</b-button> -->
+            </b-form>    
+          </div>
+          
+        </b-card-text>
+      </b-card>
+      
     <!-- search form -->
-    <b-form @submit.prevent="searchImgs(search_text)">
-      <b-form-group label-cols-sm="4" label-cols-lg="3" label="Поиск" inline>
-        <b-form-input v-model="search_text" placeholder="Поиск" :state="validation" /> 
-      </b-form-group>
-        <b-button @click="searchImgs(search_text)" variant="success">Поиск</b-button>
-    </b-form>
+    <!-- <b-form @submit.prevent="searchImgs(search_text)"> -->
+      <!-- <b-form-group label-cols-sm="4" label-cols-lg="3" label="Поиск" inline> -->
+        <!-- <b-form-input v-model="search_text" placeholder="Поиск" :state="validation" />  -->
+      <!-- </b-form-group> -->
+        <!-- <b-button @click="searchImgs(search_text)" variant="success">Поиск</b-button> -->
+    <!-- </b-form> -->
     <!-- /search form -->
 
     <!-- remove images -->
-    <b-button @click="photos=[]" variant="danger">x</b-button>
+    <!-- <b-button @click="photos=[]" variant="danger">x</b-button> -->
     <!-- /remove images -->
+    <!-- <hr> -->
 
-    <hr>
+    <br>
+    <br>
 
     <!-- image view -->
     <b-container fluid="md">
@@ -59,6 +76,7 @@ export default {
 
   mounted(){
     this.getImgs();
+    this.getRandImg();
   },
 
   computed: {
@@ -118,3 +136,9 @@ export default {
   }
 }
 </script>
+
+<style>
+#search_input{
+    max-width: 30rem;
+}
+</style>

@@ -5,60 +5,52 @@
         <template v-if="detailed == true">
             <!-- img header -->
             <div >
-                <UserInfo :user_info="img.user"/>
-                <a :href="img.links.download" class="btn btn-success" download ><b-icon icon="download"/>  Download</a>
+                <b-row align-h="between">
+                    <b-col>
+                        <UserInfo :user_info="img.user"/>
 
-                <b-button @click="$store.commit('likeImage', img.id)" variant="danger">
-                    <b-icon icon="heart-fill" v-if="$store.state.favorits.includes(img.id)"/>
-                    <b-icon icon="heart" v-else />
-                </b-button>
+                    </b-col>
+                    <b-col cols="4" class="text-right">
+
+                        <a :href="img.links.download" class="btn btn-success" download ><b-icon icon="download"/>  </a>
+                        <b-button @click="$store.commit('likeImage', img.id)" variant="danger">
+                            <b-icon icon="heart-fill" v-if="$store.state.favorits.includes(img.id)"/>
+                            <b-icon icon="heart" v-else />
+                        </b-button>
+                    </b-col>
+
+                </b-row>
+
             </div>
-            <b-img-lazy 
-                :src="img.urls.small_s3" 
-                fluid-grow  
-                :alt="img.alt_description"
-                thumbnail 
-            />
+
+            <CustomImg :img="img"/>
+
         </template>
         
 
         <template v-else>
             <a :href="'/about/'+ img.id">
-                <b-img-lazy 
-                    :src="img.urls.small_s3" 
-                    fluid-grow  
-                    :alt="img.alt_description"
-                    thumbnail 
-                />
+                <CustomImg :img="img"/>
             </a>
         </template>
         
         <!-- {{img.user}} || -->
 
     </template>
-    <template v-else> <h1>loading...</h1> </template>
-    <!-- <b-card  -->
-    <!-- img-bottom  -->
-    <!-- :img-src="img.urls.small" -->
-    <!-- :img-alt="img.alt_description" -->
-    <!-- no-body -->
-    <!-- > -->
-        <!-- <template #header> -->
-            <!-- <img :src="img.user.profile_image.small" width="24px" alt=""> -->
-            <!-- {{img.user.name}} || -->
-            <!-- @{{img.user.username}} || -->
-        <!-- </template> -->
-    <!-- </b-card> -->
+    <template v-else> <h3>loading...</h3> </template>
+
 </div>
     
 </template>
 
 <script>
 import UserInfo from '@/components/UserInfo.vue'
+import CustomImg from '@/components/CustomImg.vue'
 
 export default {
     components:{
         UserInfo,
+        CustomImg,
     },
 
     props: {
@@ -73,3 +65,4 @@ export default {
     },
 }
 </script>
+

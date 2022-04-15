@@ -1,9 +1,8 @@
 <template>
-    <div>
-        
-        <SplashImage :img="image" />
+<b-card>
+  <SplashImage :img="image" />
 
-    </div>
+</b-card>
 </template>
 
 

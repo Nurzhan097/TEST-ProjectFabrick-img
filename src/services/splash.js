@@ -3,7 +3,7 @@ import http from "../http-common";
 class Splash {
     // get one random img
     getRandomImage() {
-        return http.get(`photos/random`);
+        return http.get(`photos/random/`);
     }
 
     // get many imgs

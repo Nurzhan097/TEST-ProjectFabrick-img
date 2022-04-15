@@ -1,11 +1,13 @@
 <template>
-<div>
-    <h1>Favorits</h1>
+<div text-align="center" >
+    <br>
+    <h1 class="text-center">Избранное</h1>
+    <br>
 
-    favorits = {{$store.state.favorits}}
-    <br>
-    last = {{$store.getters.Favorits()}}
-    <br>
+    <!-- favorits = {{$store.state.favorits}} -->
+    <!-- <br> -->
+    <!-- last = {{$store.getters.Favorits()}} -->
+    <!-- <br> -->
 
     <template v-if="$store.state.favorits.length > 0">
         <!-- image view -->
