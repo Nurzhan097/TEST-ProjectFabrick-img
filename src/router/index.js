@@ -10,14 +10,21 @@ const routes = [{
             import ('../views/Home.vue')
     },
     {
-        path: '/about',
-        name: 'About',
+        path: '/about/:image_id/',
+        name: 'AboutImage',
         component: () =>
-            import ('../views/About.vue')
+            import ('../views/AboutImage.vue')
+    },
+    {
+        path: '/favorits/',
+        name: 'Favorits',
+        component: () =>
+            import ('../views/Favorits.vue')
     }
 ]
 
 const router = new VueRouter({
+    mode: 'history',
     routes
 })
 
