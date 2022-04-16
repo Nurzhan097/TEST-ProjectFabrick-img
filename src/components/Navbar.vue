@@ -1,6 +1,8 @@
 <template>
     <b-navbar toggleable="lg" type="dark" variant="dark" >
-        <b-navbar-brand href="/" > Atar.inc</b-navbar-brand>
+        <b-navbar-brand href="/" > 
+         <img src="/sf_logo.png"  alt="SanFrancisco" class="d-inline-block align-top" style="    height: 62px;">
+        </b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
 
