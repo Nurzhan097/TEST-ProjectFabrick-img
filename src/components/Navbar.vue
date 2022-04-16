@@ -14,7 +14,7 @@
                     Поиск
                 </b-nav-item>
 
-                <b-nav-item href="/favorits/" right>
+                <b-nav-item href="/#/favorits/" right>
                     <b-icon icon="heart" />
                     Избранное 
                     <b-badge variant="light">({{$store.state.favorits.length}})</b-badge> 

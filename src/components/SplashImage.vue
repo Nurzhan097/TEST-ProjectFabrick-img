@@ -29,7 +29,7 @@
         
 
         <template v-else>
-            <a :href="'/about/'+ img.id">
+            <a :href="'/#/about/'+ img.id">
                 <CustomImg :img="img"/>
             </a>
         </template>
